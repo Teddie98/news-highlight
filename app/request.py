@@ -10,6 +10,7 @@ api_key = app.config['NEWS_API_KEY']
 
 # Getting the movie base url
 base_url = app.config["NEWS_API_BASE_URL"]
+base_article_url =
 
 
 def get_sources(category):

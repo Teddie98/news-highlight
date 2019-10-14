@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +13,9 @@
 </head>
 
 <body>
+    <!-- Content block -->
+    {% block content %}
+
     <!-- Sources section  -->
     <h3> Popular Sources</h3>
     <ul>
@@ -27,6 +31,7 @@
         <li>{{ macro.displayNewsList(entertainment)}}</li>
 
     </ul>
+    {% endblock%}
 
 </body>
 
