@@ -1,5 +1,3 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,24 +12,19 @@
 
 <body>
     <!-- Content block -->
-    {% block content %}
+
 
     <!-- Sources section  -->
-    <h3> Popular Sources</h3>
+    <h3> News Sources</h3>
     <ul>
-
-        <li>{{ macro.displayNewsList(general)}}</li>
+        {% for general_category in general %}
+        <!-- <li>{{ general_category.name}}</li> -->
+        <li><a href="/newsarticle/{{general_category.id}}">{{general_category.name}}</a></li>
+        {% endfor %}
 
     </ul>
 
-    <!-- Entertainment  -->
-    <h3> Entertainment News </h3>
-    <ul>
 
-        <li>{{ macro.displayNewsList(entertainment)}}</li>
-
-    </ul>
-    {% endblock%}
 
 </body>
 

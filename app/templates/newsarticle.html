@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> News Articles </title>
+    {% endif %}
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for articles_item in articles %}
+        <p><strong>{{ articles_item.title }}</strong></p>
+        <p>{{ articles_item.description }}</p>
+
+        <img src="{{articles_item.urlToImage}}">
+
+        {%if articles_item.content%}
+        <p><em>{{articles_item.content | truncate(120)}}</em></p>
+        {%endif%}
+
+        {%if articles_item.author%}
+        <p class="font-weight-normal">by {{articles_item.author}}</a>.
+        </p>
+        {%endif%}
+        
+        {%if articles_item.publishedAt%}
+        <p>Posted on: {{articles_item.publishedAt[:10]}}</p>
+        {%endif%}
+
+        
+
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
