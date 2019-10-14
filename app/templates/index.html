@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,10 +15,18 @@
     <!-- Sources section  -->
     <h3> Popular Sources</h3>
     <ul>
-       {% for general_category in general %}
-           <li>{{ general_category.name}}</li>
-       {% endfor %}
-   </ul>
+
+        <li>{{ macro.displayNewsList(general)}}</li>
+
+    </ul>
+
+    <!-- Entertainment  -->
+    <h3> Entertainment News </h3>
+    <ul>
+
+        <li>{{ macro.displayNewsList(entertainment)}}</li>
+
+    </ul>
 
 </body>
 

@@ -10,14 +10,14 @@ def index():
     '''
     general_categories = get_sources('general')
     # business_category = get_sources('business')
-    # entertainment_category = get_sources('entertainment')
-    # sports_category = get_sources('sports')
-    # technology_category = get_sources('technology')
+    entertainment_categories = get_sources('entertainment')
+    # sports_categories = get_sources('sports')
+    # technology_categories = get_sources('technology')
     # science_category = get_sources('science')
     # health_category = get_sources('health')
 
     title = 'World News Highlights'
-    return render_template('index.html',title = title, general = general_categories)
+    return render_template('index.html',title = title, general = general_categories, entertainment= entertainment_categories, )
 
 @app.route('/newsarticle/<id>')
 def newsarticle(id):
