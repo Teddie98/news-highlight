@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,7 @@
 
 <body>
     <!-- Content block -->
+    {% block content %}
 
 
     <!-- Sources section  -->
@@ -23,6 +25,8 @@
         {% endfor %}
 
     </ul>
+    
+    {% endblock%}
 
 
 
