@@ -12,37 +12,48 @@
 </head>
 
 <body>
+
     <!-- Content block -->
     {% block content %}
-
-    <h1>{{ title }}</h1>
-    <ul>
-        {% for articles_item in articles %}
-        <p><strong>{{ articles_item.title }}</strong></p>
-        <p>{{ articles_item.description }}</p>
-
-        <img src="{{articles_item.urlToImage}}">
-
-        {%if articles_item.content%}
-        <p><em>{{articles_item.content | truncate(120)}}</em></p>
-        {%endif%}
-
-        {%if articles_item.author%}
-        <p class="font-weight-normal">by {{articles_item.author}}</a>.
-        </p>
-        {%endif%}
+    <div class="container article-content">
+        <h1>{{ title }}</h1>
+    
+                {% for articles_item in articles %}
+            <div class="row article">
+                    
+                    
+                    <div class="col-md-5">
+                            <img src="{{articles_item.urlToImage}}" width="100%">
+                    </div>
         
-        {%if articles_item.publishedAt%}
-        <p>Posted on: {{articles_item.publishedAt[:10]}}</p>
-        {%endif%}
+                    <div class="col-md-7">
+                            <p><strong>{{ articles_item.title }}</strong></p>
+                            <p>{{ articles_item.description }}</p>
+                            {%if articles_item.content%}
+                            <p><em>{{articles_item.content | truncate(120)}}</em></p>
+                            {%endif%}
+                
+                            {%if articles_item.author%}
+                            <p class="font-weight-normal">by {{articles_item.author}}</a>.
+                            </p>
+                            {%endif%}
+                
+                            {%if articles_item.publishedAt%}
+                            <p>Posted on: {{articles_item.publishedAt[:10]}}</p>
+                            {%endif%}
+                
+                            <p> <a href="{{ articles_item.url }}">Go to full story</a> </p>
 
-        <p> <a href="{{ articles_item.url }}">Go to full story</a> </p>
+                    </div>
+                
+            </div>
+            {% endfor %}
 
-        
 
-        {% endfor %}
 
-    </ul>
+    </div>
+
+
     {% endblock%}
 
 </body>

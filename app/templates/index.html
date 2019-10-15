@@ -17,15 +17,26 @@
 
 
     <!-- Sources section  -->
-    <h3> News Sources</h3>
+   
+    <div class="container landing content">
+        <div class="list-group list-group-flush">
+                <h3> News Sources</h3>
+            {% for general_category in general %}
+
+            <a href="/newsarticle/{{general_category.id}}"
+                class="list-group-item list-group-item-action" style="width: 20rem;">{{general_category.name}}</a>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
     <ul>
-        {% for general_category in general %}
-        <!-- <li>{{ general_category.name}}</li> -->
-        <li><a href="/newsarticle/{{general_category.id}}">{{general_category.name}}</a></li>
-        {% endfor %}
+
+
 
     </ul>
-    
+
     {% endblock%}
 
 
