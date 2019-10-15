@@ -17,37 +17,43 @@
     {% block content %}
     <div class="container article-content">
         <h1>{{ title }}</h1>
-    
-                {% for articles_item in articles %}
-            <div class="row article">
-                    
-                    
-                    <div class="col-md-5">
-                            <img src="{{articles_item.urlToImage}}" width="100%">
-                    </div>
-        
-                    <div class="col-md-7">
-                            <p><strong>{{ articles_item.title }}</strong></p>
-                            <p>{{ articles_item.description }}</p>
-                            {%if articles_item.content%}
-                            <p><em>{{articles_item.content | truncate(120)}}</em></p>
-                            {%endif%}
-                
-                            {%if articles_item.author%}
-                            <p class="font-weight-normal">by {{articles_item.author}}</a>.
-                            </p>
-                            {%endif%}
-                
-                            {%if articles_item.publishedAt%}
-                            <p>Posted on: {{articles_item.publishedAt[:10]}}</p>
-                            {%endif%}
-                
-                            <p> <a href="{{ articles_item.url }}">Go to full story</a> </p>
 
-                    </div>
+        {% for articles_item in articles %}
+        <div class="row" id="article-row">
+
+
+            <div class="col-md-5">
+                <img src="{{articles_item.urlToImage}}" width="100%">
+            </div>
+
+            <div class="col-md-7">
+                <p><strong>{{ articles_item.title }}</strong></p>
+                <hr>
+                <p>{{ articles_item.description }}</p>
+
+                <div id="content-details">
+                    <p><em>{{articles_item.content}}</em></p>
+                </div>
+
+                <div class="details">
+                        {%if articles_item.author%}
+                        <p class="font-weight-normal">by {{articles_item.author}}</a>.
+                        </p>
+                        {%endif%}
+        
+                        {%if articles_item.publishedAt%}
+                        <p>Posted on: {{articles_item.publishedAt[:10]}}</p>
+                        {%endif%}
+        
+                        <p><a href="{{ articles_item.url }}">Go to full story</a></p>
+        
+
+                </div>
                 
             </div>
-            {% endfor %}
+
+        </div>
+        {% endfor %}
 
 
 

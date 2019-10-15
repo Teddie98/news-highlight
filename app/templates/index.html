@@ -18,16 +18,29 @@
 
     <!-- Sources section  -->
    
-    <div class="container landing content">
-        <div class="list-group list-group-flush">
-                <h3> News Sources</h3>
-            {% for general_category in general %}
+    <div class="container landing-content">
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="list-group list-group-flush">
+                            <h3 class="News"> News Sources</h3>
+                        {% for general_category in general %}
+            
+                        <a href="/newsarticle/{{general_category.id}}"
+                            class="list-group-item list-group-item-action srces " style="width: 20rem;">{{general_category.name}}</a>
+                        {% endfor %}
+            
+                    </div>
 
-            <a href="/newsarticle/{{general_category.id}}"
-                class="list-group-item list-group-item-action" style="width: 20rem;">{{general_category.name}}</a>
-            {% endfor %}
+            </div>
+
+            <div class="col-md-8 Popular">
+                    <h3> Popular Sources</h3>
+                <img src="{{url_for('static',filename='image2.png')}}" alt="" width="100%">
+
+            </div>
 
         </div>
+        
 
     </div>
 
