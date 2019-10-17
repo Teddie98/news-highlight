@@ -23,7 +23,7 @@
 
 
             <div class="col-md-5">
-                <img src="{{articles_item.urlToImage}}" width="100%">
+                <img class="fadeInUp details" src="{{articles_item.urlToImage}}" width="100%">
             </div>
 
             <div class="col-md-7">
@@ -35,7 +35,7 @@
                     <p><em>{{articles_item.content}}</em></p>
                 </div>
 
-                <div class="details">
+                <div class="animated fadeInUp details">
                         {%if articles_item.author%}
                         <p class="font-weight-normal">by {{articles_item.author}}</a>.
                         </p>
