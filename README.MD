@@ -11,7 +11,7 @@
 
 A web application made using Python's Flask that uses the News API to allow a user to keep up with the World News by providing them with daily highlights straight from their preferred sources.
 
-**[Live-Link to site.](https://isaacg94.github.io/github-search/)**
+**[Live-Link to site.](https://world-news-highlights.herokuapp.com/)**
 ## Features
 * A landing page with a list of some of the most popular news publishers that exists in the world right now.
 * A display of articles from a selected news publisher.
@@ -26,9 +26,9 @@ A web application made using Python's Flask that uses the News API to allow a us
 ## Setup/Installation Requirements
 Here is a run through of how to set up the application:
 * Step 1 : Clone this repository using the git clone link:
-  * **`git clone https:`**
+  * **`git clone https://github.com/Isaacg94/news-highlight`**
 * Step 2 : Navigate to the directory:
-  * **`cd newshighlights`**
+  * **`cd news-highlight-master`**
 * Step 3 : Open the directory created with your favorite IDE. If Atom type **`atom .`** if VSCode type **`code .`** . This will lauch the editor with the project setup,
 * Now feel free to hack around the project.
 
